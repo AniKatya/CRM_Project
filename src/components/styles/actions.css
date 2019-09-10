@@ -1,0 +1,23 @@
+body{
+    font-family: 'Montserrat';
+}
+
+
+#add-client{
+    margin-left: 30px;
+}
+
+#client-input{
+    margin-left: 30px;
+}
+.input-name{
+    margin-left: 30px;
+}
+
+#dropdown{
+    font-family: 'Montserrat';
+}
+
+#input-placeholder{
+    font-family: 'Montserrat';
+}

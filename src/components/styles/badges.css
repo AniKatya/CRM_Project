@@ -1,0 +1,47 @@
+.badges-comp {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+}
+
+#new-clients-badge{
+    color : #8CB369;
+}
+
+#emails-sent-badge{
+    color: #5B8E7D;
+}
+
+#outstanding-clients-badge{
+    color: #BC4B51;
+}
+
+#hottest-country-badge{
+    color: #F4A259;
+    /* color: #F4E285 */
+}
+
+
+.badge-container{
+  display: grid;
+  grid-template-areas:
+  "b b d" 
+  "b b c";
+  grid-column-gap: 15px;
+  height: 60px;
+}
+
+.badge-icon{
+  font-size: 60px;
+  grid-area:b;
+}
+
+.badge-data{
+  grid-area: d;
+  font-size: 25px;
+}
+
+.badge-comment{
+  grid-area:c;
+}
+
