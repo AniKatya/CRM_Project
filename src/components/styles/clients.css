@@ -1,22 +1,17 @@
-#clients-table{
-    border: 1px solid;
-    background-color: #EEEEEE;
-    width: 100%;
-    text-align: left;
-    border-collapse: collapse;
+.table-head{
+    font-size: 15px !important;
+    font-weight: bold !important;
+    color: #219E8F !important;
+  }
+
+.clients-page{
+    margin: 50px;
+  }
+
+.clients-filter{
+  margin-left: 15px;
 }
 
-#clients-table td, th {
-    border: 1px solid #219E8F;
-    padding: 3px 2px;
-  }
-
-#clients-table tbody td {
-    font-size: 15px;
-  }
-
-#clients-table thead th {
-    font-size: 15px;
-    font-weight: bold;
-    color: #219E8F;
-  }
+.navbar-link{
+  margin-left: 57px;
+}

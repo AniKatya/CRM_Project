@@ -4,12 +4,11 @@ const Schema = mongoose.Schema
 const clientsSchema = new Schema({
     name : String,
     email : String,
-    firstContact : Date,
+    firstContact : { type: Date, default: Date.now },
     emailType : String,
-    sold : Boolean,
+    sold : {type:Boolean, default: false},
     owner : String,
     country : String
-    // surname : String
 })
 
 const Client = mongoose.model("Client", clientsSchema)

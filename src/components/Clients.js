@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
-import '../styles/clients.css'
+import '../components/styles/clients.css'
 import Popup from './Popup';
+import Table from '@material-ui/core/Table';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+import ClientsFilter from '../components//actions/ClientsFilter.js'
 
 
 class Clients extends Component {
@@ -22,7 +28,7 @@ class Clients extends Component {
     }
 
     updateUserData = () => {
-            this.props.updateUserData()
+        this.props.updateUserData()
     }
 
     setCurrentID = (event) => {
@@ -31,34 +37,33 @@ class Clients extends Component {
         const index = data.findIndex(element => element._id === id);
         this.setState({ currentId: index })
     }
-
+    
 
     render() {
         return (
-            <div id="clients-page">
-                {this.state.popup ? <Popup state={this.props.state} showPopup={this.showPopup} closePopup={this.closePopup} currentId={this.state.currentId} saveUserData = {this.props.saveUserData} updateUserData={this.props.updateUserData}/> : null}
-                <input placeholder="Search"></input>
-                <table id="clients-table">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>E-mail</th>
-                            <th>Owner</th>
-                            <th>Country</th>
-                        </tr>
-                    </thead>
+            <div className ="clients-page">
+                {this.state.popup ? <Popup state={this.props.state} showPopup={this.showPopup} closePopup={this.closePopup} currentId={this.state.currentId} saveUserData={this.props.saveUserData} updateUserData={this.props.updateUserData} /> : null}
+                <ClientsFilter />
+                <Table>
+                    <TableHead className="table-head">
+                        <TableRow>
+                            <TableCell className="table-head">Name</TableCell>
+                            <TableCell className="table-head">E-mail</TableCell>
+                            <TableCell className="table-head">Owner</TableCell>
+                            <TableCell className="table-head">Country</TableCell>
+                        </TableRow>
+                    </TableHead>
                     {this.props.state.data.map(d =>
-                        <tbody >
-                            <tr id={d._id} onClick={this.showPopup}>
-                                <td>{d.name}</td>
-                                <td>{d.email}</td>
-                                <td>{d.owner}</td>
-                                <td>{d.country}</td>
-                            </tr>
-                        </tbody>
-
+                        <TableBody>
+                            <TableRow id={d._id} onClick={this.showPopup}>
+                                <TableCell>{d.name}</TableCell>
+                                <TableCell>{d.email}</TableCell>
+                                <TableCell>{d.owner}</TableCell>
+                                <TableCell>{d.country}</TableCell>
+                            </TableRow>
+                        </TableBody>
                     )}
-                </table>
+                </Table>
             </div>)
     }
 }
