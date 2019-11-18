@@ -36,7 +36,7 @@ class Actions extends Component {
 
   render() {
     return (
-      <div>
+      <div className = "actions-page">
         <ClientInput saveUserData={this.saveUserData} />
         <Update data={this.props.state.data} user={this.state.user} saveUserData={this.saveUserData} updateUserData={this.updateUserData} declareSale={this.declareSale} />
         <AddClient saveUserData={this.saveUserData} addNewUser={this.addNewUser}/>

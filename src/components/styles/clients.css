@@ -8,10 +8,20 @@
     margin: 50px;
   }
 
+.table-config{
+    display: flex;
+    justify-content: space-between;
+}
 .clients-filter{
   margin-left: 15px;
+}
+
+.column-filter{
+  margin-top: 20px;
 }
 
 .navbar-link{
   margin-left: 57px;
 }
+
+

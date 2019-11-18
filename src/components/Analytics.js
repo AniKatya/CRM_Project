@@ -3,6 +3,7 @@ import axios from 'axios';
 import Badges from './analytics/Badges'
 import TopEmployees from './analytics/TopEmployees';
 import SalesByCountry from './analytics/SalesByCountry';
+import '../App.css'
 
 
 
@@ -24,7 +25,7 @@ class Analytics extends Component {
 
     render() {
         return (
-            <div id='analytics'>
+            <div className ='analytics-page'>
                 <Badges data={this.state.data} newClients={this.state.newClients} />
                 <TopEmployees data={this.state.data} />
                 <SalesByCountry data={this.state.data} />
