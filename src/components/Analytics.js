@@ -15,7 +15,7 @@ class Analytics extends Component {
     }
 
     componentDidMount() {
-        axios.get(`http://localhost:5000/clients`)
+        axios.get(`/clients`)
             .then(res => {
                 const data = res.data;
                 this.setState({ data });

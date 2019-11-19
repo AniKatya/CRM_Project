@@ -2,7 +2,7 @@ const express = require('express')
 const Client = require('../Client')
 const router = express.Router()
 const bodyParser = require('body-parser')
-const data = require('../../src/data.json')
+// const data = require('../../src/data.json')
 
 
 router.use(bodyParser.json())

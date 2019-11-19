@@ -3,9 +3,6 @@ import '../components/styles/popup.css'
 import Button from '@material-ui/core/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons'
-import Input from '@material-ui/core/Input';
-import axios from 'axios';
-
 
 
 class Popup extends Component {

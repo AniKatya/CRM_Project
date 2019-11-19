@@ -5,14 +5,10 @@
   font-weight: bold;
 }
 
-body{
-  font-family: 'Montserrat';
-}
-
 .analytics-page{
   margin: 20px 50px 50px 50px;
 }
 
 * {
-  font-family: Montserrat;
+  font-family: 'Montserrat';
 }

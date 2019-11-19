@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGlobeEurope } from '@fortawesome/free-solid-svg-icons'
-// import '../styles/hottestcountry.css'
-const groupArray = require('group-array');
 
 class HottestCountry extends Component {
   render() {

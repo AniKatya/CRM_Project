@@ -31,7 +31,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    axios.get(`http://localhost:5000/clients`)
+    axios.get(`/clients`)
       .then(res => {
         const data = res.data;
         this.setState({ 
@@ -44,7 +44,7 @@ class App extends Component {
     const data = [...this.state.data]
     let obj = data[userIndex]
     obj[updatedKey] = newValue
-    axios.put(`http://localhost:5000/update_client`, obj)
+    axios.put(`/update_client`, obj)
       .then(res => {
         console.log(res.data)
       })
@@ -55,14 +55,14 @@ class App extends Component {
     let obj = data[userIndex]
     console.log(userIndex)
     obj.sold = true
-    axios.put(`http://localhost:5000/update_client`, obj)
+    axios.put(`/update_client`, obj)
       .then(res => {
         console.log(res.data)
       })
   }
 
   addNewUser = (obj) => {
-    axios.post(`http://localhost:5000/add_client`, obj)
+    axios.post(`/add_client`, obj)
       .then(res => {
         console.log(res.data);
       })

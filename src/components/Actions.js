@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Update from '../components/actions/Update';
 import AddClient from '../components/actions/AddClient';
-import ClientInput from '../components/actions/ClientInput';
 import Paper from '@material-ui/core/Paper';
 import '../components/styles/actions.css'
 import axios from 'axios';
@@ -30,7 +29,7 @@ class Actions extends Component {
   }
 
   declareSale = async() => {
-    axios.get(`http://localhost:5000/clients`)
+    axios.get(`/clients`)
       .then(res=> {
         const userIndex = res.data.findIndex(d => d.name === this.state.name)
         this.props.declareSale(userIndex)
