@@ -3,10 +3,18 @@ import { BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContaine
 
 
 class SalesByCountry extends Component {
-//   handleInputChange = (e) => {
-//     const value = e.target.value;
-//     this.props.filterBy(value);
-// }
+  constructor() {
+    super()
+    this.state = {
+      key: 'country'
+    }
+  }
+    handleInputChange = (e) => {
+      const value = e.target.value;
+      this.setState({
+        key: value
+      });
+  }
   render() {
     const allData = [...this.props.data]
     const countries = {}
@@ -28,21 +36,18 @@ class SalesByCountry extends Component {
     const data = countryCounter.splice(0, 5)
     return (
       <div id="sales-by-country">
-         <div id="sales-by-country-titles">
-          <h3>Sales By Country:</h3>
-        </div>
-        <div className="salesBy-select"><span>Sales by : </span>
+        <h3 className="chart-header">SALES BY COUNTRY:</h3>
+        {/* <div className="salesBy-select"><span>Sales by : </span>
           <select onChange={this.handleInputChange}>
             <option value="email">email</option>
             <option value="month">month</option>
             <option value="owner">owner</option>
             <option value="country">country</option>
-          </select>
-        </div>
-        <div id="sales-by-country-chart">
-          <ResponsiveContainer width={800} height={200}>
+          </select> */}
+        <div className="chart">
+          <ResponsiveContainer width={700} height={250}>
             <BarChart data={data}>
-              <XAxis dataKey="country" stroke="#474044" />
+              <XAxis dataKey={this.state.key} stroke="#474044" />
               <YAxis />
               <Tooltip wrapperStyle={{ width: "fit-contect", backgroundColor: '#ccc', color: "#FFAE00" }} />
               <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
@@ -50,7 +55,7 @@ class SalesByCountry extends Component {
             </BarChart>
           </ResponsiveContainer>
         </div>
-      </div>
+        </div>
     )
   }
 }

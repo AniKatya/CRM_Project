@@ -3,8 +3,7 @@ import axios from 'axios';
 import Badges from './analytics/Badges'
 import TopEmployees from './analytics/TopEmployees';
 import SalesByCountry from './analytics/SalesByCountry';
-import '../App.css'
-
+import '../components/styles/charts.css'
 
 
 class Analytics extends Component {
@@ -27,8 +26,10 @@ class Analytics extends Component {
         return (
             <div className ='analytics-page'>
                 <Badges data={this.state.data} newClients={this.state.newClients} />
+                <div className = "charts">
                 <TopEmployees data={this.state.data} />
                 <SalesByCountry data={this.state.data} />
+                </div>
             </div>
         );
     }

@@ -8,10 +8,6 @@ import HottestCountry from './HottestCountry';
 
 
 class Badges extends Component {
-  constructor() {
-    super();
-    this.state = {}
-  }
   render() {
     return (
       <div className="badges-comp">

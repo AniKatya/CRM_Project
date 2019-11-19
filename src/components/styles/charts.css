@@ -1,0 +1,19 @@
+*{
+    font-family: Montserrat;
+}
+
+.chart-header{
+    color: red;
+    color: #1c8276;
+    font-weight: bold;
+    margin: 50px 0px 30px 20px;
+}
+
+.salesBy-select{
+    margin: 0 0 20px 20px;
+}
+
+.charts{
+    display: flex;
+    justify-content: space-between;
+}
