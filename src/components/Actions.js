@@ -4,7 +4,6 @@ import AddClient from '../components/actions/AddClient';
 import Paper from '@material-ui/core/Paper';
 import '../components/styles/actions.css'
 import axios from 'axios';
-const url = `http://localhost:5000`
 
 
 class Actions extends Component {
@@ -30,7 +29,7 @@ class Actions extends Component {
   }
 
   declareSale = async() => {
-    axios.get(`${url}/clients`)
+    axios.get('/clients')
       .then(res=> {
         const userIndex = res.data.findIndex(d => d.name === this.state.name)
         this.props.declareSale(userIndex)

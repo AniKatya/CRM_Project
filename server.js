@@ -7,7 +7,7 @@ const app = express()
 app.use(express.static(path.join(__dirname, 'build')));
 
 const mongoose = require('mongoose')
-mongoose.connect(process.env.MONGODB_URI||"mongodb://localhost/client")
+mongoose.connect(process.env.MONGODB_URL||"mongodb://localhost/client")
 
 app.use('/', api)
 app.use(bodyParser.json())

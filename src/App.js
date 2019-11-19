@@ -10,7 +10,6 @@ import Clients from './components/Clients';
 import Analytics from './components/Analytics';
 import Actions from './components/Actions';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-const url = `http://localhost:5000`
 
 const theme = createMuiTheme(
   {
@@ -31,7 +30,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    axios.get(`${url}/clients`)
+    axios.get('/clients')
       .then(res => {
         const data = res.data;
         this.setState({ 
@@ -44,7 +43,7 @@ class App extends Component {
     const data = [...this.state.data]
     let obj = data[userIndex]
     obj[updatedKey] = newValue
-    axios.put(`${url}/update_client`, obj)
+    axios.put('/update_client', obj)
       .then(res => {
         console.log(res.data)
       })
@@ -55,14 +54,14 @@ class App extends Component {
     let obj = data[userIndex]
     console.log(userIndex)
     obj.sold = true
-    axios.put(`${url}/update_client`, obj)
+    axios.put('/update_client', obj)
       .then(res => {
         console.log(res.data)
       })
   }
 
   addNewUser = (obj) => {
-    axios.post(`${url}/add_client`, obj)
+    axios.post('/add_client', obj)
       .then(res => {
         console.log(res.data);
       })

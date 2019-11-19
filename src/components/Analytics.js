@@ -4,7 +4,6 @@ import Badges from './analytics/Badges'
 import TopEmployees from './analytics/TopEmployees';
 import SalesByCountry from './analytics/SalesByCountry';
 import '../components/styles/charts.css'
-const url = `http://localhost:5000`
 
 
 class Analytics extends Component {
@@ -16,7 +15,7 @@ class Analytics extends Component {
     }
 
     componentDidMount() {
-        axios.get(`${url}/clients`)
+        axios.get('/clients')
             .then(res => {
                 const data = res.data;
                 this.setState({ data });
