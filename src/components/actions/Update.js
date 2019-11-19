@@ -15,32 +15,25 @@ class Update extends Component {
   updateUserData = () => {
     this.props.updateUserData()
   }
-  declareSale = () => {
-    this.props.declareSale()
-  }
+
   render() {
     const allOwners = this.props.data.map(d => d.owner)
     const uniqueOwners = [...new Set(allOwners)];
 
     return (
-      <div id="update-component">
-        <div>
-          <span className = "input-name">Transfer ownership to:</span>
-          <select id="dropdown">
+      <div>
+       <h4 className = "actions-header">INPUT </h4>
+       <div><span className="actions-name">Client:</span><Input name = "name" className="actions-value" onChange = {this.saveUserData}></Input></div>
+        <div><span className = "actions-name">Change e-mail:</span><Input name = "email" className="actions-value" onChange={this.saveUserData}></Input>
+          <Button className = "button" onClick={this.updateUserData}><span className="button-label">Send</span></Button>
+        </div>
+        
+        <div><span className = "actions-name">Transfer ownership to:</span>
+          <select className = "actions-value">
           <option disabled selected hidden>Owner</option>
           {uniqueOwners.map(o=><option>{o}</option>)}
           </select>
-          <Button>Transfer</Button>
-          
-        </div>
-        <div>
-          <span className = "input-name">Send email:</span>
-              <Input name="email" onChange={this.saveUserData}></Input>
-          <Button onClick={this.updateUserData}>Send</Button>
-        </div>
-        <div>
-        <span className = "input-name">Declare sale:</span>
-              <Button onClick={this.declareSale}>Declare</Button>
+          <Button className = "button"><span className="button-label">Transfer</span></Button>
         </div>
       </div>
     );

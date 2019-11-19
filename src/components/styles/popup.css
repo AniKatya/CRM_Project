@@ -1,3 +1,6 @@
+*{
+    font-family: Montserrat;
+}
 .popup-comp{
     position: fixed;  
     width: 100%;  
@@ -20,10 +23,14 @@
     width: 400px;
     height: 150px;
     margin: auto;  
-    font-size: 18px;
+    font-size: 16px;
     border-radius: 10px;  
-    background: #F4E285;  
+    background: #EAC563;  
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
   }
+
 
 #close-btn{
     color:#BC4B51;
@@ -31,11 +38,42 @@
 }
 
 #update-btn{
-    margin-right: calc(100% - 30px);
-    margin-left: 102px;
+    width: 100px;
+    color: #1c8276;
+    font-weight: bold;
+}
+
+#declare-btn{
+    margin-left: 80px;
+    color: #1c8276;
+    font-weight: bold;
+    width: 130px;
 }
 
 .popup-content{
-    margin-right: calc(100% - 30px);
-    margin-left: 110px;
+    line-height: 50px;
 }
+
+.label-popup{
+    width: 150px !important;
+    margin-left: 20%;
+}
+
+.input-popup{
+    display: inline-block !important;
+    flex-direction: column;
+    float: right;
+    margin-right: 20%;
+    margin-top: 15px;
+    width: 150px;
+    height: 40%;
+    border-radius: 5px;
+    border: none;
+}
+
+::-webkit-input-placeholder {
+    text-align: center;
+    font-size: 15px;
+ }
+ 
+ 

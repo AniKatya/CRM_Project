@@ -50,7 +50,7 @@ class Clients extends Component {
 
     setCurrentID = (event) => {
         const id = event.currentTarget.getAttribute('id')
-        const data = this.props.state.data
+        const data = this.props.data
         const index = data.findIndex(element => element._id === id);
         this.setState({ currentId: index })
     }
@@ -63,7 +63,7 @@ class Clients extends Component {
         return (
             <Paper className="clients-page">
                 {this.state.popup ?
-                    <Popup state={this.props.state} showPopup={this.showPopup} closePopup={this.closePopup} currentId={this.state.currentId} saveUserData={this.props.saveUserData} updateUserData={this.props.updateUserData} />
+                    <Popup declareSale={this.props.declareSale} state={this.props.state} showPopup={this.showPopup} closePopup={this.closePopup} currentId={this.state.currentId} saveUserData={this.props.saveUserData} updateUserData={this.props.updateUserData} />
                     : null}
                 <div className="table-config">
                     <ClientsFilter filterData={this.filterData} />
@@ -97,7 +97,7 @@ class Clients extends Component {
 
                     {this.props.data.slice(this.state.page * this.state.rowsPerPage, this.state.page * this.state.rowsPerPage + this.state.rowsPerPage).map(d =>
                         <TableBody>
-                            <TableRow id={d._id} onClick={this.showPopup}>
+                            <TableRow className = "table-row" id={d._id} onClick={this.showPopup}>
                                 <TableCell>{d.name}</TableCell>
                                 <TableCell>{d.email}</TableCell>
                                 <TableCell>{d.country}</TableCell>

@@ -21,7 +21,6 @@ class ClientsFilter extends Component {
         this.setState({
             valueName: event.target.value
         })
-        console.log(event.target.value)
         this.props.filterData(this.state.columnName, event.target.value)
     }
 

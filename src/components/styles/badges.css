@@ -1,7 +1,7 @@
 .badges-comp {
     display: flex;
     justify-content: space-between;
-    padding: 40px;
+    padding: 30px;
 }
 
 #new-clients-badge{

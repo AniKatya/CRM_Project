@@ -1,6 +1,6 @@
 .navbar-link{
   text-decoration: none;
-  color: #5B8E7D;
+  color: #1c8276;
   font-size: 18px;
   font-weight: bold;
 }
@@ -11,4 +11,8 @@ body{
 
 .analytics-page{
   margin: 20px 50px 50px 50px;
+}
+
+* {
+  font-family: Montserrat;
 }

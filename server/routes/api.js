@@ -19,6 +19,7 @@ router.use(function (req, res, next) {
 
 router.post('/add_client', (req, res) => {
     const obj = new Client(req.body)
+    console.log("i am inside post")
     obj.save()
     res.end()
 })

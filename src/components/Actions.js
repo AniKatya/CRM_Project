@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 import Update from '../components/actions/Update';
 import AddClient from '../components/actions/AddClient';
 import ClientInput from '../components/actions/ClientInput';
+import Paper from '@material-ui/core/Paper';
+import '../components/styles/actions.css'
+import axios from 'axios';
+
 
 class Actions extends Component {
   constructor() {
@@ -11,6 +15,7 @@ class Actions extends Component {
   }
 
   saveUserData = (event) => {
+    console.log(event.target.name)
     this.setState({
       [event.target.name]: event.target.value
     })
@@ -24,10 +29,12 @@ class Actions extends Component {
     this.props.updateUserData(userIndex, updatedKey, newValue)
   }
 
-  declareSale = () => {
-    const data = this.props.state.data;
-    const userIndex = data.findIndex(d => d.name === this.state.name);
-    this.props.declareSale(userIndex)
+  declareSale = async() => {
+    axios.get(`http://localhost:5000/clients`)
+      .then(res=> {
+        const userIndex = res.data.findIndex(d => d.name === this.state.name)
+        this.props.declareSale(userIndex)
+      })
   }
 
   addNewUser=()=>{
@@ -37,9 +44,12 @@ class Actions extends Component {
   render() {
     return (
       <div className = "actions-page">
-        <ClientInput saveUserData={this.saveUserData} />
+        <Paper className = "actions-container">
         <Update data={this.props.state.data} user={this.state.user} saveUserData={this.saveUserData} updateUserData={this.updateUserData} declareSale={this.declareSale} />
+        </Paper>
+        <Paper classname = "actions-container">
         <AddClient saveUserData={this.saveUserData} addNewUser={this.addNewUser}/>
+        </Paper>
       </div>
     );
   }

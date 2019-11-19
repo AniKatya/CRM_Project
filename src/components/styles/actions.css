@@ -1,27 +1,50 @@
-body{
-    font-family: 'Montserrat';
+*{
+font-family: 'Montserrat'!important;
 }
 
-
-#add-client{
+.actions-name{
     margin-left: 30px;
-}
-
-#client-input{
-    margin-left: 30px;
-}
-.input-name{
-    margin-left: 30px;
-}
-
-#dropdown{
-    font-family: 'Montserrat';
-}
-
-#input-placeholder{
-    font-family: 'Montserrat';
+    display: inline-block;
+    width: 250px;
+    font-size: 16px;
 }
 
 .actions-page{
     margin: 50px;
   }
+
+.actions-header{
+    font-size: 16px !important;
+    font-weight: bolder !important;
+    color: #1c8276 !important;
+    margin-left: 30px !important;
+}
+
+.actions-value{
+    width: 200px;
+    margin-bottom: 15px;
+}
+
+#declare-sale{
+    margin-bottom: 20px;
+}
+
+#dropdown{
+    width: 185px;
+}
+
+.button{
+    color: #1c8276 !important;
+    font-weight: bolder !important;
+    background-color: hsla(44, 76%, 65%, 50%) !important;
+    width: 100px;
+    height:25px;
+    /* display: inline-block; */
+    float:right;
+    margin-right:50% !important;
+}
+
+.button-label{
+    font-size: 15px;
+    line-height: 1;
+}

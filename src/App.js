@@ -35,8 +35,7 @@ class App extends Component {
       .then(res => {
         const data = res.data;
         this.setState({ 
-          data: data,
-          pagedData: data
+          data: data
         });
       })
   }
@@ -48,13 +47,13 @@ class App extends Component {
     axios.put(`http://localhost:5000/update_client`, obj)
       .then(res => {
         console.log(res.data)
-
       })
   }
 
   declareSale = (userIndex) => {
     const data = [...this.state.data]
     let obj = data[userIndex]
+    console.log(userIndex)
     obj.sold = true
     axios.put(`http://localhost:5000/update_client`, obj)
       .then(res => {
@@ -71,7 +70,7 @@ class App extends Component {
 
   filterData = (columnName, valueName)=>{
     const data = [...this.state.data]
-    const filteredData = data.filter(d=>d[columnName].toLowerCase().includes(valueName.toLowerCase()))
+    const filteredData = data.filter(dt=>dt[columnName].toLowerCase().includes(valueName.toLowerCase()))
     this.setState({
       data: filteredData
     })
@@ -90,8 +89,8 @@ class App extends Component {
           </AppBar>
         </MuiThemeProvider>
         <div id="routes">
-          <Route path="/" exact render={() => <Clients handleChangePage = {this.handleChangePage} state={this.state} updateUserData={this.updateUserData} filterData={this.filterData}  data={this.state.data}/>} />
-          <Route path="/actions" exact render={() => <Actions state={this.state} updateUserData={this.updateUserData} declareSale={this.declareSale} addNewUser={this.addNewUser} />} />
+          <Route path="/" exact render={() => <Clients handleChangePage = {this.handleChangePage} state={this.state} declareSale={this.declareSale} updateUserData={this.updateUserData} filterData={this.filterData}  data={this.state.data}/>} />
+          <Route path="/actions" exact render={() => <Actions state={this.state} updateUserData={this.updateUserData} addNewUser={this.addNewUser} />} />
           <Route path="/analytics" exact render={() => <Analytics />} />
         </div>
       </Router>
