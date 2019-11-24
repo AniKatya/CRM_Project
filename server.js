@@ -21,6 +21,6 @@ app.get('*', function (req, res) {
 });
 
 app.listen(process.env.PORT || 5000, function() {
-    console.log("Server running")
+    console.log("Server is running")
   })
 
