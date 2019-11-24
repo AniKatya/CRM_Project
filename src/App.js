@@ -65,7 +65,7 @@ class App extends Component {
   addNewUser = (obj) => {
     axios.post(`/add_client`, obj)
       .then(res => {
-        console.log(res.data);
+        alert("New client has been successfully added")
       })
   }
 
