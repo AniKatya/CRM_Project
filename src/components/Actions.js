@@ -10,11 +10,9 @@ class Actions extends Component {
   constructor() {
     super();
     this.state = {}
-
   }
 
   saveUserData = (event) => {
-    console.log(event.target.name)
     this.setState({
       [event.target.name]: event.target.value
     })
@@ -28,26 +26,27 @@ class Actions extends Component {
     this.props.updateUserData(userIndex, updatedKey, newValue)
   }
 
-  declareSale = async() => {
+  declareSale = async () => {
     axios.get('/clients')
-      .then(res=> {
+      .then(res => {
         const userIndex = res.data.findIndex(d => d.name === this.state.name)
         this.props.declareSale(userIndex)
-      })
+      }
+    )
   }
 
-  addNewUser=()=>{
+  addNewUser = () => {
     this.props.addNewUser(this.state)
   }
 
   render() {
     return (
-      <div className = "actions-page">
-        <Paper className = "actions-container">
-        <Update data={this.props.state.data} user={this.state.user} saveUserData={this.saveUserData} updateUserData={this.updateUserData} declareSale={this.declareSale} />
+      <div className="actions-page">
+        <Paper className="actions-container">
+          <Update data={this.props.state.data} user={this.state.user} saveUserData={this.saveUserData} updateUserData={this.updateUserData} declareSale={this.declareSale}/>
         </Paper>
-        <Paper classname = "actions-container">
-        <AddClient saveUserData={this.saveUserData} addNewUser={this.addNewUser}/>
+        <Paper classname="actions-container">
+          <AddClient saveUserData={this.saveUserData} addNewUser={this.addNewUser} />
         </Paper>
       </div>
     );

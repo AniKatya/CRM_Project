@@ -17,7 +17,7 @@
     "fs": "0.0.1-security",
     "group-array": "^1.0.0",
     "moment": "^2.24.0",
-    "mongoose": "^5.7.11",
+    "mongoose": "^5.7.12",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-dropdown": "^1.6.4",
@@ -31,7 +31,7 @@
     "recharts": "^1.8.5"
   },
   "scripts": {
-    "start": "node server.js",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

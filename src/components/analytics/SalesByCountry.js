@@ -9,11 +9,11 @@ class SalesByCountry extends Component {
       key: 'country'
     }
   }
-    handleInputChange = (e) => {
-      const value = e.target.value;
-      this.setState({
-        key: value
-      });
+  handleInputChange = (e) => {
+    const value = e.target.value;
+    this.setState({
+      key: value
+    });
   }
   render() {
     const allData = [...this.props.data]
@@ -37,13 +37,6 @@ class SalesByCountry extends Component {
     return (
       <div id="sales-by-country">
         <h3 className="chart-header">SALES BY COUNTRY:</h3>
-        {/* <div className="salesBy-select"><span>Sales by : </span>
-          <select onChange={this.handleInputChange}>
-            <option value="email">email</option>
-            <option value="month">month</option>
-            <option value="owner">owner</option>
-            <option value="country">country</option>
-          </select> */}
         <div className="chart">
           <ResponsiveContainer width={700} height={250}>
             <BarChart data={data}>
@@ -55,7 +48,7 @@ class SalesByCountry extends Component {
             </BarChart>
           </ResponsiveContainer>
         </div>
-        </div>
+      </div>
     )
   }
 }

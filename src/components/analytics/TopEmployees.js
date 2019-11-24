@@ -25,7 +25,7 @@ class TopEmployees extends Component {
 
         return (
             <div id="top-employees-box">
-                <h3 className = "chart-header">TOP EMPLOYEES:</h3>
+                <h3 className="chart-header">TOP EMPLOYEES:</h3>
                 <div id="top-employees-chart">
                     <BarChart width={450} height={250} data={data}>
                         <XAxis dataKey="owner" stroke="#474044" />

@@ -52,15 +52,15 @@ class Popup extends Component {
             <input className="input-popup" placeholder={data[index].country} name="country" onChange={this.saveUserData}>
             </input>
           </div>
-          <div className = "buttons-container">
-          <Button id="declare-btn" onClick={this.declareSale}>
-            Declare sale</Button>
-          <Button id="update-btn" onclick={this.props.updateUserInfo} onClick={this.updateUserData}>
-            Update</Button>
-            </div>
+          <div className="buttons-container">
+            <Button id="declare-btn" onClick={this.declareSale}>
+              Declare sale</Button>
+            <Button id="update-btn" onclick={this.props.updateUserInfo} onClick={this.updateUserData}>
+              Update</Button>
+          </div>
         </div>
-      </div>)
+      </div>
+    )
   }
-
 }
 export default Popup;

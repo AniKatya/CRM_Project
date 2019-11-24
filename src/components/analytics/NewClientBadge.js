@@ -11,7 +11,7 @@ class NewClientBadge extends Component {
         const currYear = new Date().getFullYear()
         const yearCheck = c => parseInt(c.firstContact.slice(0, 4)) === currYear
         const monthCheck = c => parseInt(c.firstContact.split('-')[1]) === currMonth
-        const count = data.filter(d => monthCheck(d,currMonth) && yearCheck(d)).length
+        const count = data.filter(d => monthCheck(d, currMonth) && yearCheck(d)).length
         return count
     }
     render() {

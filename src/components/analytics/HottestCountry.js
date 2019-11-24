@@ -8,12 +8,12 @@ class HottestCountry extends Component {
     const countries = {}
     data.forEach(c => {
       if (countries[c.country]) {
-          countries[c.country]++
+        countries[c.country]++
       } else {
-          countries[c.country] = 1
+        countries[c.country] = 1
       }
     })
-    const sortedCountries = Object.keys(countries).sort(function(a,b){return countries[b]-countries[a]})
+    const sortedCountries = Object.keys(countries).sort(function (a, b) { return countries[b] - countries[a] })
     const hottestCountry = sortedCountries[0]
 
     return (
@@ -21,7 +21,7 @@ class HottestCountry extends Component {
         <FontAwesomeIcon className="badge-icon" id="hottest-country-badge" icon={faGlobeEurope} />
         <div className="badge-data">{hottestCountry}</div>
         <div className="badge-comment"> Hottest Country</div>
-        </div>
+      </div>
     );
   }
 }

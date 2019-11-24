@@ -6,6 +6,7 @@ import '../styles/actions.css'
 
 
 class Update extends Component {
+
   saveUserData = (event) => {
     this.props.saveUserData(event)
   }
@@ -22,18 +23,18 @@ class Update extends Component {
 
     return (
       <div>
-       <h4 className = "actions-header">INPUT </h4>
+       <h4 className = "actions-header">CHANGE CLIENT'S DATA </h4>
        <div><span className="actions-name">Client:</span><Input name = "name" className="actions-value" onChange = {this.saveUserData}></Input></div>
         <div><span className = "actions-name">Change e-mail:</span><Input name = "email" className="actions-value" onChange={this.saveUserData}></Input>
           <Button className = "button" onClick={this.updateUserData}><span className="button-label">Send</span></Button>
         </div>
         
         <div><span className = "actions-name">Transfer ownership to:</span>
-          <select className = "actions-value">
+          <select className = "actions-value" name="owner" onChange={this.saveUserData}>
           <option disabled selected hidden>Owner</option>
-          {uniqueOwners.map(o=><option>{o}</option>)}
+          {uniqueOwners.map(o=><option >{o}</option>)}
           </select>
-          <Button className = "button"><span className="button-label">Transfer</span></Button>
+          <Button onClick={this.updateUserData} className = "button"><span className="button-label">Transfer</span></Button>
         </div>
       </div>
     );

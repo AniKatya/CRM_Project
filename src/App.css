@@ -5,6 +5,10 @@
   font-weight: bold;
 }
 
+#main-links{
+  min-width:1050px;
+}
+
 .analytics-page{
   margin: 20px 50px 50px 50px;
 }
